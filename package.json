@@ -1,17 +1,38 @@
 {
-  "name": "practises",
+  "name": "content-platform",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:migrate": "NODE_TLS_REJECT_UNAUTHORIZED=0 prisma migrate dev",
+    "db:migrate:deploy": "NODE_TLS_REJECT_UNAUTHORIZED=0 prisma migrate deploy",
+    "db:seed": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts",
+    "db:studio": "NODE_TLS_REJECT_UNAUTHORIZED=0 prisma studio",
+    "db:generate": "NODE_TLS_REJECT_UNAUTHORIZED=0 prisma generate"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts"
   },
   "dependencies": {
+    "@prisma/client": "5.22.0",
+    "date-fns": "^4.4.0",
     "next": "16.3.7",
+    "prisma": "5.22.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^3.23.8"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-darwin-arm64": "4.3.3",
+    "@tailwindcss/oxide-darwin-x64": "4.3.3",
+    "@tailwindcss/oxide-linux-x64-gnu": "4.3.3",
+    "@tailwindcss/oxide-win32-x64-msvc": "4.3.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -21,6 +42,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

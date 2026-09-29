@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id            String   @id @default(cuid())
+  name          String
+  logoUrl       String
+  industry      String
+  summary       String
+  employeeCount Int
+  foundedYear   Int
+  websiteUrl    String
+  headquarters  String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  stories Story[]
+
+  @@index([name])
+  @@index([industry])
+}
+
+model Story {
+  id          String    @id @default(cuid())
+  title       String
+  content     Json
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  companyId   String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([companyId])
+  @@index([published])
+  @@index([publishedAt])
+}
