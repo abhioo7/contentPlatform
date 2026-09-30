@@ -49,7 +49,7 @@ Next.js App Router
 - **Server Components** fetch data directly from the database without a network round-trip.
 - **Route Handlers** expose a JSON REST API validated with Zod.
 - **Prisma** generates a fully-typed client from `prisma/schema.prisma`.
-- Story content is stored as structured JSON (never raw HTML) and rendered by `StoryRenderer` into semantic React elements — eliminating XSS risk entirely.
+- Story content is stored as structured JSON (never raw HTML) and rendered by `StoryRenderer` into semantic React elements. The renderer   avoids arbitrary HTML injection by rendering only validated structured blocks as React elements. Text content is rendered through        React's normal escaping behavior 
 
 ---
 
