@@ -33,6 +33,7 @@ export default function StoryCard({
             fill
             className="object-contain p-0.5"
             sizes="32px"
+            unoptimized
           />
         </div>
         <div>
