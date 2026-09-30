@@ -33,6 +33,7 @@ export default function CompanyCard({
             fill
             className="object-contain p-1"
             sizes="48px"
+            unoptimized
           />
         </div>
         <div className="min-w-0 flex-1">
@@ -48,7 +49,8 @@ export default function CompanyCard({
       <div className="mt-4 flex items-center justify-between">
         <span className="text-xs text-gray-400">{headquarters}</span>
         <span className="text-xs font-medium text-indigo-600">
-          {publishedStoryCount} {publishedStoryCount === 1 ? "story" : "stories"}
+          {publishedStoryCount}{" "}
+          {publishedStoryCount === 1 ? "story" : "stories"}
         </span>
       </div>
     </Link>
