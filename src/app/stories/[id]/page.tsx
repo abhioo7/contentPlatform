@@ -64,6 +64,7 @@ export default async function StoryPage({ params }: Props) {
             fill
             className="object-contain p-1"
             sizes="40px"
+            unoptimized
           />
         </div>
         <div>
@@ -125,6 +126,7 @@ export default async function StoryPage({ params }: Props) {
               fill
               className="object-contain p-1"
               sizes="40px"
+              unoptimized
             />
           </div>
           <span className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
