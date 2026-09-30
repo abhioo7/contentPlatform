@@ -60,6 +60,7 @@ export default async function CompanyPage({ params }: Props) {
             className="object-contain p-2"
             sizes="80px"
             priority
+            unoptimized
           />
         </div>
         <div className="flex-1 min-w-0">
@@ -69,7 +70,9 @@ export default async function CompanyPage({ params }: Props) {
               {company.industry}
             </span>
           </div>
-          <p className="text-gray-600 leading-relaxed mt-2">{company.summary}</p>
+          <p className="text-gray-600 leading-relaxed mt-2">
+            {company.summary}
+          </p>
           <a
             href={company.websiteUrl}
             target="_blank"
