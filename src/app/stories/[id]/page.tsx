@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { getStoryById } from "@/lib/db";
 import { parseStoryContent } from "@/lib/db";
 import StoryRenderer from "@/components/StoryRenderer";
+import StoryAlert from "@/components/StoryAlert";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -30,10 +30,11 @@ export default async function StoryPage({ params }: Props) {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <StoryAlert logoUrl={story.company.logoUrl} companyName={story.company.name} />
       {/* Back to company */}
       <Link
         href={`/companies/${story.company.id}`}
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-800 transition-colors mb-8"
+        className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-800 transition-colors mb-6"
       >
         <svg
           className="w-4 h-4"
@@ -55,16 +56,13 @@ export default async function StoryPage({ params }: Props) {
       {/* Company badge */}
       <Link
         href={`/companies/${story.company.id}`}
-        className="inline-flex items-center gap-3 mb-6 group"
+        className="flex items-center gap-4 mb-6 group"
       >
-        <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0">
-          <Image
+        <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0 flex items-center justify-center">
+          <img
             src={story.company.logoUrl}
             alt={`${story.company.name} logo`}
-            fill
-            className="object-contain p-1"
-            sizes="40px"
-            unoptimized
+            className="w-full h-full object-contain p-1"
           />
         </div>
         <div>
@@ -119,14 +117,11 @@ export default async function StoryPage({ params }: Props) {
           href={`/companies/${story.company.id}`}
           className="inline-flex items-center gap-3 group"
         >
-          <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-gray-200 bg-gray-50">
-            <Image
+          <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
+            <img
               src={story.company.logoUrl}
               alt={`${story.company.name} logo`}
-              fill
-              className="object-contain p-1"
-              sizes="40px"
-              unoptimized
+              className="w-full h-full object-contain p-1"
             />
           </div>
           <span className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">

@@ -18,7 +18,7 @@ async function main() {
     data: {
       name: "Microsoft",
       logoUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
       industry: "Technology",
       summary:
         "Microsoft is a global technology leader known for Windows, Azure cloud services, Office 365, GitHub, and enterprise software that empowers people and organizations worldwide.",
@@ -33,7 +33,7 @@ async function main() {
     data: {
       name: "Tesla",
       logoUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tesla_T_symbol.svg/512px-Tesla_T_symbol.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg",
       industry: "Electric Vehicles & Energy",
       summary:
         "Tesla accelerates the world's transition to sustainable energy through electric vehicles, solar energy, and integrated renewable energy solutions for homes and businesses.",
@@ -48,7 +48,7 @@ async function main() {
     data: {
       name: "Apple",
       logoUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/512px-Apple_logo_black.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
       industry: "Consumer Electronics & Software",
       summary:
         "Apple designs and markets consumer electronics, software, and online services. Products include iPhone, Mac, iPad, Apple Watch, and Apple Silicon, underpinned by a tightly integrated hardware-software ecosystem.",
@@ -63,7 +63,7 @@ async function main() {
     data: {
       name: "Nvidia",
       logoUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Simple_nvidia_logo.svg/512px-Simple_nvidia_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg",
       industry: "Semiconductors & AI",
       summary:
         "Nvidia pioneered GPU-accelerated computing and is now the world's leading AI infrastructure company, powering data centres, autonomous vehicles, robotics, and scientific research globally.",
